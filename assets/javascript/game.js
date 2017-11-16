@@ -1,5 +1,5 @@
 var wins = 0;
-var guessesLeft = 10;
+var guessesLeft = 20;
 var guesses = "";
 var aHeroes = ["superman", "batman", "spiderman", "thor", "wonder woman", "captain america", "iron man", "aquaman"];
 var bStarted = false;
@@ -15,7 +15,7 @@ function displayGame() {
 function newGame() {
     hero = aHeroes[Math.floor(Math.random() * aHeroes.length)];
     getHeroString(hero);
-    guessesLeft = 10;
+    guessesLeft = 20;
     guesses = "";
     filledLetter = 0;
     displayGame();
