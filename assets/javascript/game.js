@@ -57,9 +57,16 @@ function isGuessed(userGuess) {
     return false;
 }
 
+function getImg() {
+    if (hero === "superman") {
+        return './assets/images/superheroes.jpg';
+    }
+    return './assets/images/superman.png';
+}
+
 function winGame() {
     wins++;
-    console.log("win");
+    $("#game").css({ "background-image": "url("+getImg()+")"});
 }
 
 function lossGame() {
@@ -76,7 +83,6 @@ document.onkeyup = function (event) {
             if (isInWord(userGuess)) {
                 guessesLeft--;
                 displayGame();
-                console.log(numLetters + " " + filledLetter);
                 if (numLetters === filledLetter) {
                     winGame();
                 }
