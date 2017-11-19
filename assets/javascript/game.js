@@ -1,7 +1,7 @@
 var wins = 0;
 var guessesLeft = 20;
 var guesses = "";
-var aHeroes = ["superman", "batman", "spiderman", "thor", "wonder woman", "captain america", "iron man", "aquaman"];
+var aHeroes = ["superman", "batman", "wonder woman", "aquaman"];
 var bStarted = false;
 var hero = "";
 var heroString = "";
@@ -13,6 +13,7 @@ function displayGame() {
 }
 
 function newGame() {
+    $("#game").css({ "background-image": "url('./assets/images/superheroes.jpg')" });
     hero = aHeroes[Math.floor(Math.random() * aHeroes.length)];
     getHeroString(hero);
     guessesLeft = 20;
@@ -49,7 +50,7 @@ function isInWord(userGuess) {
 }
 
 function isGuessed(userGuess) {
-    for (var i = 0; i < guesses.length; i++){
+    for (var i = 0; i < guesses.length; i++) {
         if (guesses[i] === userGuess) {
             return true;
         }
@@ -59,14 +60,22 @@ function isGuessed(userGuess) {
 
 function getImg() {
     if (hero === "superman") {
-        return './assets/images/superheroes.jpg';
+        return './assets/images/superman.png';
+    } else if (hero === "batman") {
+        return './assets/images/batman.png';
+    } else if (hero === "wonder woman") {
+        return './assets/images/wonderwoman.png';
+    } else if (hero === "aquaman") {
+        return './assets/images/aquaman.png';
     }
-    return './assets/images/superman.png';
 }
 
 function winGame() {
     wins++;
-    $("#game").css({ "background-image": "url("+getImg()+")"});
+    $("#game").css({ "background-image": "url(" + getImg() + ")" });
+    setTimeout(function () {
+        newGame();
+    }, 3000);
 }
 
 function lossGame() {

@@ -14,7 +14,6 @@ body{
     width: 600px;
     height: 800px;
     border-style: outset;
-    background-image: url("../images/superheroes.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
