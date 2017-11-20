@@ -79,7 +79,10 @@ function winGame() {
 }
 
 function lossGame() {
-    console.log("loss");
+    $("#game").css({ "background-image": "url('./assets/images/game-over.jpg')" });
+    setTimeout(function () {
+        newGame();
+    }, 3000);
 }
 
 document.onkeyup = function (event) {
